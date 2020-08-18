@@ -12,7 +12,7 @@ import com.revature.util.HibernateUtil;
 
 public class UsersRepositoryImpl implements UsersRepository {
 
-	public int addUsers(Users u) {
+	public int addUser(Users u) {
 		Session sess = HibernateUtil.getSession();
 		int id = -1;
 		try {
@@ -41,7 +41,7 @@ public class UsersRepositoryImpl implements UsersRepository {
 		return Users;
 	}
 
-	public Users getUsers(int id) {
+	public Users getUser(int id) {
 		Session sess = HibernateUtil.getSession();
 		Users u = null;
 		try {
@@ -54,7 +54,7 @@ public class UsersRepositoryImpl implements UsersRepository {
 		return u;
 	}
 
-	public void updateUsers(Users change) {
+	public void updateUser(Users change) {
 		Session sess = HibernateUtil.getSession();
 		try {
 			sess.beginTransaction();
@@ -69,7 +69,7 @@ public class UsersRepositoryImpl implements UsersRepository {
 
 	}
 
-	public void deleteUsers(int id) {
+	public void deleteUser(int id) {
 		Session sess = HibernateUtil.getSession();
 		try {
 			sess.beginTransaction();
