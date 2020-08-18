@@ -7,19 +7,18 @@ import org.hibernate.HibernateException;
 import org.hibernate.Session;
 import org.hibernate.criterion.Restrictions;
 
-import com.revature.models.BattleClass;
+import com.revature.models.Character;
 import com.revature.models.Creature;
 import com.revature.util.HibernateUtil;
 
-public class CreatureRepositoryImpl implements CreatureRepository {
+public class CharacterRepositoryImpl implements CharacterRepository {
 
-	@Override
-	public int addCreature(Creature creature) {
-		 Session sess = HibernateUtil.getSession();
+	public int addCharacter(Character character) {
+		Session sess = HibernateUtil.getSession();
 		 int id = 0;
 	        try {
 	            sess.beginTransaction();
-	            id = Integer.parseInt(sess.save(creature).toString());
+	            id = Integer.parseInt(sess.save(character).toString());
 	            sess.getTransaction().commit();
 	        } catch (HibernateException e) {
 	            e.printStackTrace();
@@ -30,58 +29,40 @@ public class CreatureRepositoryImpl implements CreatureRepository {
 		return id;
 	}
 
-	@Override
-	public List<Creature> getAllCreatures() {
+	public List<Character> getAllCharacters() {
 		 Session sess = HibernateUtil.getSession();
-		 List<Creature> list = null;
+		 List<Character> list = null;
 	        try {
-	           list = sess.createQuery("FROM creature").list();
+	           list = sess.createQuery("FROM character").list();
 	        } catch (HibernateException e) {
 	            e.printStackTrace();
 	        } finally {
 	            sess.close();
 	        }
 		return list;
+	
 	}
 
-	@Override
-	public Creature getCreature(int id) {
+	public Character getCharacter(int id) {
 		 Session sess = HibernateUtil.getSession();
-		 Creature cr = null;
+		 Character ch = null;
 	        try {
-	        	cr = (Creature) sess.get(Creature.class, id);
+	        	ch = (Character) sess.get(Character.class, id);
 	           
 	        } catch (HibernateException e) {
 	            e.printStackTrace();
 	        } finally {
 	            sess.close();
 	        }
-		return cr;
+		return ch;
 	}
 
-	@Override
-	public Creature getCreature(String name) {
-		 Session sess = HibernateUtil.getSession();
-		 Creature cr = null;
-	        try {
-	          Criteria crit = sess.createCriteria(Creature.class);
-	          crit.add(Restrictions.eq("name", name));
-	          cr = (Creature) crit.uniqueResult();
-	           
-	        } catch (HibernateException e) {
-	            e.printStackTrace();
-	        } finally {
-	            sess.close();
-	        }
-		return cr;
-	}
 
-	@Override
-	public void updateCreature(Creature creature) {
+	public void updateCharacter(Character character) {
 		 Session sess = HibernateUtil.getSession();
 	        try {
 	            sess.beginTransaction();
-	            sess.merge(creature);
+	            sess.merge(character);
 	            sess.getTransaction().commit();
 	        } catch (HibernateException e) {
 	            e.printStackTrace();
@@ -89,15 +70,14 @@ public class CreatureRepositoryImpl implements CreatureRepository {
 	        } finally {
 	            sess.close();
 	        }
-		
+
 	}
 
-	@Override
-	public void deleteCreature(int id) {
+	public void deleteCharacter(int id) {
 		 Session sess = HibernateUtil.getSession();
 	        try {
 	            sess.beginTransaction();
-	            sess.delete(sess.get(Creature.class, id));
+	            sess.delete(sess.get(Character.class, id));
 	            sess.getTransaction().commit();
 	        } catch (HibernateException e) {
 	            e.printStackTrace();
@@ -105,7 +85,7 @@ public class CreatureRepositoryImpl implements CreatureRepository {
 	        } finally {
 	            sess.close();
 	        }
-		
+
 	}
 
 }
