@@ -7,7 +7,6 @@ import org.hibernate.Session;
 import org.hibernate.Transaction;
 
 import com.revature.models.Item;
-import com.revature.models.Stats;
 import com.revature.util.HibernateUtil;
 
 public class ItemRepositoryImpl implements ItemRepository {
