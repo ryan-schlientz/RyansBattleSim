@@ -64,7 +64,7 @@ public class ItemRepositoryImpl implements ItemRepository {
 	}
 
 	@Override
-	public boolean updateStats(Item item) {
+	public boolean updateItem(Item item) {
 		
 		Session sess = HibernateUtil.getSession();
 		Transaction tx = null;
