@@ -2,16 +2,15 @@ package com.revature.repositories;
 
 import java.util.List;
 
-import javax.management.relation.Role;
-
 import org.hibernate.HibernateException;
 import org.hibernate.Session;
 
+import com.revature.models.Roles;
 import com.revature.util.HibernateUtil;
 
 public class RolesRepositoryImpl implements RolesRepository {
 
-	public int addRole(Role r) {
+	public int addRole(Roles r) {
 		Session sess = HibernateUtil.getSession();
 		int id = -1;
 		try {
@@ -27,9 +26,9 @@ public class RolesRepositoryImpl implements RolesRepository {
 		return id;
 	}
 
-	public List<Role> getAllRoles() {
+	public List<Roles> getAllRoles() {
 		Session sess = HibernateUtil.getSession();
-		List<Role> roles = null;
+		List<Roles> roles = null;
 		try {
 			roles = sess.createQuery("FROM roles").list();
 		} catch(HibernateException e) {
@@ -40,11 +39,11 @@ public class RolesRepositoryImpl implements RolesRepository {
 		return roles;
 	}
 
-	public Role getRole(int id) {
+	public Roles getRole(int id) {
 		Session sess = HibernateUtil.getSession();
-		Role r = null;
+		Roles r = null;
 		try {
-			r = (Role) sess.get(Role.class, id);
+			r = (Roles) sess.get(Roles.class, id);
 		} catch(HibernateException e) {
 			e.printStackTrace();
 		} finally {
@@ -53,7 +52,7 @@ public class RolesRepositoryImpl implements RolesRepository {
 		return r;
 	}
 
-	public void updateRoles(Role change) {
+	public void updateRole(Roles change) {
 		Session sess = HibernateUtil.getSession();
 		try {
 			sess.beginTransaction();
@@ -68,7 +67,7 @@ public class RolesRepositoryImpl implements RolesRepository {
 
 	}
 
-	public void deleteRoles(int id) {
+	public void deleteRole(int id) {
 		Session sess = HibernateUtil.getSession();
 		try {
 			sess.beginTransaction();
@@ -82,5 +81,6 @@ public class RolesRepositoryImpl implements RolesRepository {
 		}
 
 	}
+
 
 }
