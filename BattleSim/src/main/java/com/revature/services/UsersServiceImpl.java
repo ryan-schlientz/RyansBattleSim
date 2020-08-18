@@ -11,7 +11,7 @@ public class UsersServiceImpl implements UsersService{
 	private UsersRepository ur = new UsersRepositoryImpl();
 	
 	public int addUsers(Users u) {
-		return ur.addUsers(u);
+		return ur.addUser(u);
 	}
 
 	public List<Users> getAllUsers() {
@@ -19,7 +19,7 @@ public class UsersServiceImpl implements UsersService{
 	}
 
 	public Users getUsers(int id) {
-		return ur.getUsers(id);
+		return ur.getUser(id);
 	}
 
 	public Users login(String username, String password) {
@@ -27,11 +27,11 @@ public class UsersServiceImpl implements UsersService{
 	}
 
 	public void updateUsers(Users change) {
-		ur.updateUsers(change);
+		ur.updateUser(change);
 	}
 
 	public void deleteUsers(int id) {
-		ur.deleteUsers(id);
+		ur.deleteUser(id);
 	}
 
 }

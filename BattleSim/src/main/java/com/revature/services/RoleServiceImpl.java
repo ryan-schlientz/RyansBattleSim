@@ -1,34 +1,32 @@
 package com.revature.services;
 
 import java.util.List;
-
-import javax.management.relation.Role;
-
+import com.revature.models.Roles;
 import com.revature.repositories.RolesRepository;
 import com.revature.repositories.RolesRepositoryImpl;
 
-public class RoleServiceImpl implements RoleService{
+public class RoleServiceImpl {
 
 	private RolesRepository rr = new RolesRepositoryImpl();
 	
-	public int addRole(Role r) {
+	public int addRole(Roles r) {
 		return rr.addRole(r);
 	}
 
-	public List<Role> getAllRoles() {
+	public List<Roles> getAllRoles() {
 		return rr.getAllRoles();
 	}
 
-	public Role getRole(int id) {
+	public Roles getRole(int id) {
 		return rr.getRole(id);
 	}
 
-	public void updateRoles(Role change) {
-		rr.updateRoles(change);
+	public void updateRole(Roles change) {
+		rr.updateRole(change);
 	}
 
-	public void deleteRoles(int id) {
-		rr.deleteRoles(id);
+	public void deleteRole(int id) {
+		rr.deleteRole(id);
 	}
 
 }
