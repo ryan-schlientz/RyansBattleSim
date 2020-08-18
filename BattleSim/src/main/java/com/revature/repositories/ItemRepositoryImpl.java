@@ -48,7 +48,7 @@ public class ItemRepositoryImpl implements ItemRepository {
 	}
 
 	@Override
-	public Item getStats(int id) {
+	public Item getItem(int id) {
 		Session sess = HibernateUtil.getSession();
 		Item s = null;
 	
@@ -74,6 +74,27 @@ public class ItemRepositoryImpl implements ItemRepository {
 		try {
 			tx = sess.beginTransaction();
 			sess.saveOrUpdate(item);
+			tx.commit();
+			success = true;
+		} catch (HibernateException e) {
+			e.printStackTrace();
+			tx.rollback();
+		} finally {
+			sess.close();
+		}
+		
+		return success;
+	}
+	
+	@Override
+	public boolean deleteItem(Item item) {
+		Session sess = HibernateUtil.getSession();
+		Transaction tx = null;
+		boolean success = false;
+		
+		try {
+			tx = sess.beginTransaction();
+			sess.delete(item);
 			tx.commit();
 			success = true;
 		} catch (HibernateException e) {

@@ -9,5 +9,6 @@ public interface StatsRepository {
 	public List<Stats> getAllStats();
 	public Stats getStats(int id);
 	public boolean updateStats(Stats stats);
+	public boolean deleteStats(Stats stats);
 	
 }

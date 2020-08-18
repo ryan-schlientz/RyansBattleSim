@@ -88,5 +88,26 @@ public class StatsRepositoryImpl implements StatsRepository {
 		
 		return success;
 	}
+	
+	@Override
+	public boolean deleteStats(Stats stats) {
+		Session sess = HibernateUtil.getSession();
+		Transaction tx = null;
+		boolean success = false;
+		
+		try {
+			tx = sess.beginTransaction();
+			sess.delete(stats);
+			tx.commit();
+			success = true;
+		} catch (HibernateException e) {
+			e.printStackTrace();
+			tx.rollback();
+		} finally {
+			sess.close();
+		}
+		
+		return success;
+	}
 
 }
