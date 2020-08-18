@@ -18,12 +18,22 @@ public class UsersServiceImpl implements UsersService{
 		return ur.getAllUsers();
 	}
 
-	public Users getUsers(int id) {
+	public Users getUser(int id) {
 		return ur.getUser(id);
 	}
 
+	public Users getUser(String username) {
+		return ur.getUser(username);
+	}
+	
 	public Users login(String username, String password) {
-		return ur.login(username, password);
+		Users u = ur.getUser(username);
+		if(u != null) {
+			if(u.getPassword().equals(password)) {
+				return u;
+			}			
+		}
+		return null;
 	}
 
 	public void updateUsers(Users change) {
@@ -32,6 +42,10 @@ public class UsersServiceImpl implements UsersService{
 
 	public void deleteUsers(int id) {
 		ur.deleteUser(id);
+	}
+
+	public List<Users> getUsersByRole(int id) {
+		return ur.getUsersByRole(id);
 	}
 
 }
