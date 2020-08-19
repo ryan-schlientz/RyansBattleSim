@@ -1,5 +1,6 @@
 package com.revature.models;
 
+import javax.management.relation.Role;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -22,25 +23,25 @@ public class Users {
 	
 	@ManyToOne(targetEntity = Roles.class)
 	@JoinColumn(name="r_id")
-	private int r_id;
+	private Role role;
 	
 	public Users() {
 		super();
 	}
 
-	public Users(String username, String password, int r_id) {
+	public Users(String username, String password, Role role) {
 		super();
 		this.username = username;
 		this.password = password;
-		this.r_id = r_id;
+		this.role = role;
 	}
 	
-	public Users(int id, String username, String password, int r_id) {
+	public Users(int id, String username, String password, Role role) {
 		super();
 		this.id = id;
 		this.username = username;
 		this.password = password;
-		this.r_id = r_id;
+		this.role = role;
 	}
 
 	public int getId() {
@@ -67,13 +68,13 @@ public class Users {
 		this.password = password;
 	}
 
-	public int getR_id() {
-		return r_id;
+	public Role getR_id() {
+		return role;
 	}
 
-	public void setR_id(int r_id) {
-		this.r_id = r_id;
-	}
+	public void setR_id(Role role) {
+		this.role = role;
+		}
 
 	@Override
 	public int hashCode() {
@@ -81,7 +82,6 @@ public class Users {
 		int result = 1;
 		result = prime * result + id;
 		result = prime * result + ((password == null) ? 0 : password.hashCode());
-		result = prime * result + r_id;
 		result = prime * result + ((username == null) ? 0 : username.hashCode());
 		return result;
 	}
@@ -103,7 +103,7 @@ public class Users {
 				return false;
 		} else if (!password.equals(other.password))
 			return false;
-		if (r_id != other.r_id)
+		if (role != other.role)
 			return false;
 		if (username == null) {
 			if (other.username != null)
@@ -116,7 +116,7 @@ public class Users {
 
 	@Override
 	public String toString() {
-		return "Users [id=" + id + ", username=" + username + ", password=" + password + ", r_id=" + r_id + "]";
+		return "Users [id=" + id + ", username=" + username + ", password=" + password + ", r_id=" + role.toString() + "]";
 	}
 
 }
