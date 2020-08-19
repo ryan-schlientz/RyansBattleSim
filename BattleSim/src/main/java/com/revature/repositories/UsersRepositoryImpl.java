@@ -7,6 +7,7 @@ import org.hibernate.HibernateException;
 import org.hibernate.Session;
 import org.hibernate.criterion.Restrictions;
 
+import com.revature.models.Roles;
 import com.revature.models.Users;
 import com.revature.util.HibernateUtil;
 
@@ -84,13 +85,12 @@ public class UsersRepositoryImpl implements UsersRepository {
 
 	}
 
-	public Users login(String username, String password) {
+	public Users getUser(String username) {
 		Users u = null;
 		Session sess = HibernateUtil.getSession();
 		try {
 			Criteria crit = sess.createCriteria(Users.class);
 			crit.add(Restrictions.eq("username", username));
-			crit.add(Restrictions.eq("password", password));
 			u = (Users) crit.uniqueResult();
 		} catch(HibernateException e) {
 			e.printStackTrace();
@@ -99,6 +99,21 @@ public class UsersRepositoryImpl implements UsersRepository {
 		}
 		
 		return u;
+	}
+
+	public List<Users> getUsersByRole(int id) {
+		Session sess = HibernateUtil.getSession();
+		List<Users> Users = null;
+		try {
+			Criteria crit = sess.createCriteria(Roles.class);
+			crit.add(Restrictions.eq("r_id", id));
+			Users = crit.list();
+		} catch (HibernateException e) {
+			e.printStackTrace();
+		} finally {
+			sess.close();
+		}
+		return Users;
 	}
 
 }

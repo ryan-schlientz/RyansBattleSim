@@ -7,12 +7,13 @@ import org.hibernate.HibernateException;
 import org.hibernate.Session;
 import org.hibernate.criterion.Restrictions;
 
-import com.revature.models.BattleClass;
 import com.revature.models.Creature;
+import com.revature.models.BattleClass;
+
+import com.revature.util.HibernateUtil;
 
 public class CreatureRepositoryImpl implements CreatureRepository {
 
-	@Override
 	public int addCreature(Creature creature) {
 		 Session sess = HibernateUtil.getSession();
 		 int id = 0;
@@ -29,7 +30,6 @@ public class CreatureRepositoryImpl implements CreatureRepository {
 		return id;
 	}
 
-	@Override
 	public List<Creature> getAllCreatures() {
 		 Session sess = HibernateUtil.getSession();
 		 List<Creature> list = null;
@@ -43,7 +43,6 @@ public class CreatureRepositoryImpl implements CreatureRepository {
 		return list;
 	}
 
-	@Override
 	public Creature getCreature(int id) {
 		 Session sess = HibernateUtil.getSession();
 		 Creature cr = null;
@@ -58,7 +57,6 @@ public class CreatureRepositoryImpl implements CreatureRepository {
 		return cr;
 	}
 
-	@Override
 	public Creature getCreature(String name) {
 		 Session sess = HibernateUtil.getSession();
 		 Creature cr = null;
@@ -75,7 +73,6 @@ public class CreatureRepositoryImpl implements CreatureRepository {
 		return cr;
 	}
 
-	@Override
 	public void updateCreature(Creature creature) {
 		 Session sess = HibernateUtil.getSession();
 	        try {
@@ -91,7 +88,6 @@ public class CreatureRepositoryImpl implements CreatureRepository {
 		
 	}
 
-	@Override
 	public void deleteCreature(int id) {
 		 Session sess = HibernateUtil.getSession();
 	        try {
