@@ -1,0 +1,10 @@
+div{
+    text-align: center;
+}
+
+h3{
+    border: 2px solid gray;
+    border-radius: 5px;
+    margin: 5px;
+    background-color: aliceblue;
+}
