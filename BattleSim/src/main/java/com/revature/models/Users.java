@@ -20,7 +20,7 @@ public class Users {
 	private String username;
 	private String password;
 	
-	@ManyToOne()
+	@ManyToOne(targetEntity = Roles.class)
 	@JoinColumn(name="r_id")
 	private int r_id;
 	
