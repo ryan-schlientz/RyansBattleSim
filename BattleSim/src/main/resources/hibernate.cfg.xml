@@ -40,7 +40,14 @@
 		</property>
 		
 		<!-- Class Mappings -->
-		
+		<mapping class ="com.revature.models.BattleClass"/>
+		<mapping class ="com.revature.models.Character"/>
+		<mapping class ="com.revature.models.Creature"/>
+		<mapping class ="com.revature.models.Inventory"/>
+		<mapping class ="com.revature.models.Item"/>
+		<mapping class ="com.revature.models.Roles"/>
+		<mapping class ="com.revature.models.Stats"/>
+		<mapping class ="com.revature.models.Users"/>
 		
 	</session-factory>
 </hibernate-configuration>
