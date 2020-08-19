@@ -33,7 +33,7 @@ public class CreatureRepositoryImpl implements CreatureRepository {
 		 Session sess = HibernateUtil.getSession();
 		 List<Creature> list = null;
 	        try {
-	           list = sess.createQuery("FROM creature").list();
+	           list = sess.createQuery("FROM Creature").list();
 	        } catch (HibernateException e) {
 	            e.printStackTrace();
 	        } finally {

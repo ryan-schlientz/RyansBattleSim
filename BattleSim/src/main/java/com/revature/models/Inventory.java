@@ -6,12 +6,18 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
-import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 import javax.persistence.SequenceGenerator;
 
 @Entity
 public class Inventory {
+	
+	@Id
+	@Column(name = "inv_id", updatable = false)
+	@SequenceGenerator(name = "inventory_seq", sequenceName = "inventory_seq")
+	@GeneratedValue(generator = "inventory_seq", strategy = GenerationType.SEQUENCE)
+	private int id;
+	
 
 	@OneToOne
 	@JoinColumn(name="i_id")
