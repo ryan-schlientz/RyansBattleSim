@@ -1,12 +1,22 @@
 <nav class="navbar navbar-dark navbar-expand-sm" style="background-color: navy;">
   <div class="container">
       <div class="navbar-nav">
-          <!-- <h3 class="nav-item nav-link"><a routerLink="about">About</a></h3> -->
-          <h4 class="nav-item nav-link"><a routerLink="createCharacter">Create Character</a></h4>
-          <h4 class="nav-item nav-link"><a routerLink="deleteCharacter">Delete Character</a></h4>
-          <h4 class="nav-item nav-link"><a routerLink="manageInventory">Manage Inventory</a></h4>
-          <h4 class="nav-item nav-link"><a routerLink="home">Home</a></h4>
+          <h4 (click)="showCC()" class="nav-item nav-link"><a routerLink="createCharacter">Create Character</a></h4>
+          <h4 (click)="showDC()" class="nav-item nav-link"><a routerLink="deleteCharacter">Delete Character</a></h4>
+          <h4 (click)="showMI()" class="nav-item nav-link"><a routerLink="manageInventory">Manage Inventory</a></h4>
       </div>
     </div>
   </nav>
   <router-outlet></router-outlet>
+
+  <app-create-character *ngIf="ifCreate"></app-create-character>
+  <app-delete-character *ngIf="ifDelete"></app-delete-character>
+  <app-manage-inventory *ngIf="ifManage"></app-manage-inventory>
+  
+
+  <!-- <div [ngSwitch]="switchVal">
+    <app-home *ngSwitchCase="home"></app-home>
+    <app-create-character *ngSwitchCase="create"></app-create-character>
+    
+  </div>  Switch not working, if anybody ants to try to figure it out, go ahead -->
+  

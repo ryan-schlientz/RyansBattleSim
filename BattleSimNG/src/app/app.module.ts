@@ -8,6 +8,10 @@ import { HomeComponent } from './Components/home/home.component';
 import { RegisterComponent } from './Components/register/register.component';
 import { HelpComponent } from './Components/help/help.component';
 import { MyAccountComponent } from './Components/my-account/my-account.component';
+import { BattleComponent } from './Components/battle/battle.component';
+import { CreateCharacterComponent } from './Components/create-character/create-character.component';
+import { DeleteCharacterComponent } from './Components/delete-character/delete-character.component';
+import { ManageInventoryComponent } from './Components/manage-inventory/manage-inventory.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +20,11 @@ import { MyAccountComponent } from './Components/my-account/my-account.component
     HomeComponent,
     RegisterComponent,
     HelpComponent,
-    MyAccountComponent
+    MyAccountComponent,
+    BattleComponent,
+    CreateCharacterComponent,
+    DeleteCharacterComponent,
+    ManageInventoryComponent
   ],
   imports: [
     BrowserModule,
