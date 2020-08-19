@@ -31,6 +31,9 @@ public class RequestHelper {
 		case "/BattleSim/login.do":
 			ac.login(request, response);
 			break;
+		case "/BattleSim/logout.do":
+			ac.logout(request, response);
+			break;
 		case "/BattleSim/addCharacter.do":
 			ac.addCharacter(request, response);
 			break;

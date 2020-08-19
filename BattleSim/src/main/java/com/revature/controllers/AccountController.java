@@ -91,6 +91,12 @@ public class AccountController {
 			response.setStatus(401);
 		}
 	}
+	
+	public void logout(HttpServletRequest request, HttpServletResponse response) throws IOException {
+		HttpSession sess = request.getSession();
+		sess.setAttribute("user", null);
+		response.setStatus(200);
+	}
 
 	public void addCharacter(HttpServletRequest request, HttpServletResponse response) throws IOException {
 		Character c = gson.fromJson(request.getReader(), Character.class);
