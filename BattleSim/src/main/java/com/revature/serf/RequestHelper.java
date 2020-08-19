@@ -5,6 +5,8 @@ import java.io.IOException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import com.revature.controllers.CreatureController;
+
 public class RequestHelper {
 
 	public static void requestdirect(HttpServletRequest request, HttpServletResponse response) throws IOException {
@@ -20,11 +22,14 @@ public class RequestHelper {
 			break;
 		case "/BattleSim/getCharacter.do":
 			break;
-		case "/BattleSim/getCreature.do":
+		case "/BattleSim/getCreature.do": 
+			CreatureController.getCreatureById(request, response);
 			break;
 		case "/BattleSim/addCreature.do":
+			CreatureController.addCreature(request, response);
 			break;
 		case "/BattleSim/getAllCreatures.do":
+			CreatureController.getAllCreatures(request, response);
 			break;
 		case "/BattleSim/getItem.do":
 			break;
