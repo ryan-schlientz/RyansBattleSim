@@ -16,7 +16,7 @@ public class MasterServlet extends HttpServlet {
 
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		response.getWriter().append("Served at: ").append(request.getContextPath());
+		RequestHelper.requestdirect(request, response);
 		addCorsHeader(response);
 	}
 
