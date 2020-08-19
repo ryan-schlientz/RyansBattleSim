@@ -10,11 +10,13 @@ import org.hibernate.criterion.Restrictions;
 import com.revature.models.BattleClass;
 import com.revature.util.HibernateUtil;
 
+import com.revature.util.HibernateUtil;
+
+
 
 
 public class BattleClassRepositoryImpl implements BattleClassRepository {
 
-	@Override
 	public int addBattleClass(BattleClass battleClass) {
 		int id = 0;
 		 Session sess = HibernateUtil.getSession();
@@ -31,7 +33,6 @@ public class BattleClassRepositoryImpl implements BattleClassRepository {
 		return id;
 	}
 
-	@Override
 	public List<BattleClass> getAllBattleClass() {
 		 Session sess = HibernateUtil.getSession();
 		 List<BattleClass> list = null;
@@ -46,8 +47,7 @@ public class BattleClassRepositoryImpl implements BattleClassRepository {
 	        }
 		return list;
 	}
-
-	@Override
+  
 	public BattleClass getBattleClass(int id) {
 		 Session sess = HibernateUtil.getSession();
 		 BattleClass bc = null;
@@ -62,7 +62,6 @@ public class BattleClassRepositoryImpl implements BattleClassRepository {
 		return bc;
 	}
 
-	@Override
 	public BattleClass getBattleClass(String title) {
 		 Session sess = HibernateUtil.getSession();
 		 BattleClass bc = null;
@@ -81,7 +80,6 @@ public class BattleClassRepositoryImpl implements BattleClassRepository {
 		return bc;
 	}
 
-	@Override
 	public void updateBattleClass(BattleClass battleClass) {
 		 Session sess = HibernateUtil.getSession();
 	        try {
@@ -97,7 +95,6 @@ public class BattleClassRepositoryImpl implements BattleClassRepository {
 
 	}
 
-	@Override
 	public void deleteBattleClass(int id) {
 		 Session sess = HibernateUtil.getSession();
 	        try {
