@@ -97,6 +97,14 @@ public class Inventory {
 	public void setIsEquipped(int isEquipped) {
 		this.isEquipped = isEquipped;
 	}
+	
+	public int getID() {
+		return this.id;
+	}
+	
+	public void setID(int id) {
+		this.id = id;
+	}
 
 	@Override
 	public String toString() {
