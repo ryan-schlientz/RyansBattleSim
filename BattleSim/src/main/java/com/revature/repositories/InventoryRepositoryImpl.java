@@ -31,7 +31,7 @@ public class InventoryRepositoryImpl implements InventoryRepository {
 		Session sess = HibernateUtil.getSession();
 		 List<Inventory> list = null;
 	        try {
-	           list = sess.createQuery("FROM INVENTORY").list();
+	           list = sess.createQuery("FROM Inventory").list();
 	        } catch (HibernateException e) {
 	            e.printStackTrace();
 	        } finally {
