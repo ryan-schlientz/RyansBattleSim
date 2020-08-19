@@ -7,11 +7,6 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.SequenceGenerator;
 
-/*CREATE TABLE roles (
-    r_id NUMBER(10) PRIMARY KEY,
-    name VARCHAR2(20));
- * */
-
 @Entity
 public class Roles {
 
@@ -23,6 +18,15 @@ public class Roles {
 	
 	private String name;
 	
+	public Roles() {
+		super();
+	}
+
+	public Roles(String name) {
+		super();
+		this.name = name;
+	}
+
 	public Roles(int r_id, String name) {
 		super();
 		this.r_id = r_id;
