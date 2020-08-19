@@ -10,8 +10,6 @@ import org.hibernate.criterion.Restrictions;
 import com.revature.models.BattleClass;
 import com.revature.util.HibernateUtil;
 
-import com.revature.util.HibernateUtil;
-
 
 
 
@@ -37,7 +35,6 @@ public class BattleClassRepositoryImpl implements BattleClassRepository {
 		 Session sess = HibernateUtil.getSession();
 		 List<BattleClass> list = null;
 	        try {
-	        	
 	        	list = sess.createQuery("FROM BattleClass").list();
 	           
 	        } catch (HibernateException e) {
@@ -47,7 +44,7 @@ public class BattleClassRepositoryImpl implements BattleClassRepository {
 	        }
 		return list;
 	}
-  
+
 	public BattleClass getBattleClass(int id) {
 		 Session sess = HibernateUtil.getSession();
 		 BattleClass bc = null;

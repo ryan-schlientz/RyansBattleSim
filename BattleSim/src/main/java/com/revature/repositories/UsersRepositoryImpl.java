@@ -6,7 +6,6 @@ import org.hibernate.Criteria;
 import org.hibernate.HibernateException;
 import org.hibernate.Session;
 import org.hibernate.criterion.Restrictions;
-
 import com.revature.models.Roles;
 import com.revature.models.Users;
 import com.revature.util.HibernateUtil;
