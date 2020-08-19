@@ -32,7 +32,7 @@ public class UsersRepositoryImpl implements UsersRepository {
 		Session sess = HibernateUtil.getSession();
 		List<Users> Users = null;
 		try {
-			Users = sess.createQuery("FROM users").list();
+			Users = sess.createQuery("FROM Users").list();
 		} catch (HibernateException e) {
 			e.printStackTrace();
 		} finally {

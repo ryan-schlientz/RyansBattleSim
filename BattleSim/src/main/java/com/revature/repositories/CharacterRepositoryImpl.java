@@ -33,7 +33,7 @@ public class CharacterRepositoryImpl implements CharacterRepository {
 		 Session sess = HibernateUtil.getSession();
 		 List<Character> list = null;
 	        try {
-	           list = sess.createQuery("FROM character").list();
+	           list = sess.createQuery("FROM Character").list();
 	        } catch (HibernateException e) {
 	            e.printStackTrace();
 	        } finally {
