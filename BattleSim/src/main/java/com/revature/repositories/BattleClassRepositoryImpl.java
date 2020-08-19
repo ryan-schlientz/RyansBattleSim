@@ -38,7 +38,7 @@ public class BattleClassRepositoryImpl implements BattleClassRepository {
 		 List<BattleClass> list = null;
 	        try {
 	        	
-	        	list = sess.createQuery("FROM class").list();
+	        	list = sess.createQuery("FROM BattleClass").list();
 	           
 	        } catch (HibernateException e) {
 	            e.printStackTrace();
