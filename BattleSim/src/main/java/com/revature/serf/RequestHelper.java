@@ -5,15 +5,15 @@ import java.io.IOException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-<<<<<<< HEAD
+
 import com.revature.controllers.BattleClassController;
 import com.revature.controllers.CreatureController;
-=======
+
 import com.revature.controllers.InventoryController;
 import com.revature.controllers.ItemController;
 import com.revature.controllers.StatsController;
 import com.revature.controllers.AccountController;
->>>>>>> origin/BackendMaster
+
 
 public class RequestHelper {
 
@@ -33,8 +33,6 @@ public class RequestHelper {
 			break;
 		case "/BattleSim/addCharacter.do":
 			ac.addCharacter(request, response);
-			break;
-		case "/BattleSim/addCharacter.do":
 			break;
 		case "/BattleSim/getCharacter.do":
 			ac.getCharacter(request, response);
