@@ -30,7 +30,7 @@ public class RolesRepositoryImpl implements RolesRepository {
 		Session sess = HibernateUtil.getSession();
 		List<Roles> roles = null;
 		try {
-			roles = sess.createQuery("FROM roles").list();
+			roles = sess.createQuery("FROM Roles").list();
 		} catch(HibernateException e) {
 			e.printStackTrace();
 		} finally {
