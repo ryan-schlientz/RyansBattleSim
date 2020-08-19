@@ -119,6 +119,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "BattleSimNG"
+    }
+  },
+  "defaultProject": "BattleSimNG",
+  "cli": {
+    "analytics": "682c9175-a748-407a-b7bc-ab774fc01ca3"
+  }
 }
