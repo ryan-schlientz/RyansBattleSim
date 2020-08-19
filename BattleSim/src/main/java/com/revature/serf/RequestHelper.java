@@ -8,15 +8,18 @@ import javax.servlet.http.HttpServletResponse;
 public class RequestHelper {
 
 	public static void requestdirect(HttpServletRequest request, HttpServletResponse response) throws IOException {
-
+		
 		String uri = request.getRequestURI();
 
 		switch (uri) {
 		case "/BattleSim/getUser.do":
+			
 			break;
 		case "/BattleSim/addUser.do":
 			break;
 		case "/BattleSim/login.do":
+			break;
+		case "/BattleSim/addCharacter.do":
 			break;
 		case "/BattleSim/getCharacter.do":
 			break;
