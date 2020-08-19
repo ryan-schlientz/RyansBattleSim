@@ -27,7 +27,7 @@ public class Creature {
 	private BattleClass battleClass;
 	
 	
-	private double xpBase;
+	private float xpBase;
 
 
 	public Creature() {
@@ -35,7 +35,7 @@ public class Creature {
 	}
 
 
-	public Creature(int crId, String name, Stats stats, BattleClass battleClass, double xpBase) {
+	public Creature(int crId, String name, Stats stats, BattleClass battleClass, float xpBase) {
 		super();
 		this.crId = crId;
 		this.name = name;
@@ -45,13 +45,16 @@ public class Creature {
 	}
 
 
-	public Creature(String name, Stats stats, BattleClass battleClass, double xpBase) {
+	public Creature(String name, Stats stats, BattleClass battleClass, float xpBase) {
 		super();
 		this.name = name;
 		this.stats = stats;
 		this.battleClass = battleClass;
 		this.xpBase = xpBase;
 	}
+
+
+
 
 
 	@Override
@@ -62,9 +65,7 @@ public class Creature {
 		result = prime * result + crId;
 		result = prime * result + ((name == null) ? 0 : name.hashCode());
 		result = prime * result + ((stats == null) ? 0 : stats.hashCode());
-		long temp;
-		temp = Double.doubleToLongBits(xpBase);
-		result = prime * result + (int) (temp ^ (temp >>> 32));
+		result = prime * result + Float.floatToIntBits(xpBase);
 		return result;
 	}
 
@@ -95,7 +96,7 @@ public class Creature {
 				return false;
 		} else if (!stats.equals(other.stats))
 			return false;
-		if (Double.doubleToLongBits(xpBase) != Double.doubleToLongBits(other.xpBase))
+		if (Float.floatToIntBits(xpBase) != Float.floatToIntBits(other.xpBase))
 			return false;
 		return true;
 	}
@@ -146,7 +147,7 @@ public class Creature {
 	}
 
 
-	public void setXpBase(double xpBase) {
+	public void setXpBase(float xpBase) {
 		this.xpBase = xpBase;
 	}
 
