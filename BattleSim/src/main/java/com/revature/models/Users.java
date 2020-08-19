@@ -9,15 +9,6 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.SequenceGenerator;
 
-/*
- * CREATE TABLE users (
-    id NUMBER(10) PRIMARY KEY,
-    username VARCHAR2(50) UNIQUE,
-    password VARCHAR2(75),
-    r_id NUMBER(10));
-    
-*/
-
 @Entity
 public class Users {
 	@Id
@@ -37,6 +28,13 @@ public class Users {
 		super();
 	}
 
+	public Users(String username, String password, int r_id) {
+		super();
+		this.username = username;
+		this.password = password;
+		this.r_id = r_id;
+	}
+	
 	public Users(int id, String username, String password, int r_id) {
 		super();
 		this.id = id;
@@ -44,14 +42,6 @@ public class Users {
 		this.password = password;
 		this.r_id = r_id;
 	}
-
-	public Users(String username, String password, int r_id) {
-		super();
-		this.username = username;
-		this.password = password;
-		this.r_id = r_id;
-	}
-
 
 	public int getId() {
 		return id;
