@@ -5,15 +5,10 @@ import java.io.IOException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-
-import com.revature.controllers.BattleClassController;
-import com.revature.controllers.CreatureController;
-
 import com.revature.controllers.InventoryController;
 import com.revature.controllers.ItemController;
 import com.revature.controllers.StatsController;
 import com.revature.controllers.AccountController;
-
 
 public class RequestHelper {
 
@@ -37,14 +32,11 @@ public class RequestHelper {
 		case "/BattleSim/getCharacter.do":
 			ac.getCharacter(request, response);
 			break;
-		case "/BattleSim/getCreature.do": 
-			CreatureController.getCreatureById(request, response);
+		case "/BattleSim/getCreature.do":
 			break;
 		case "/BattleSim/addCreature.do":
-			CreatureController.addCreature(request, response);
 			break;
 		case "/BattleSim/getAllCreatures.do":
-			CreatureController.getAllCreatures(request, response);
 			break;
 		case "/BattleSim/getItem.do":
 			ItemController.getItem(request, response);
@@ -56,6 +48,13 @@ public class RequestHelper {
 			ItemController.addItem(request, response);
 			break;
 		case "/BattleSim/getInventory.do":
+			InventoryController.getInventory(request, response);
+			break;
+		case "/BattleSim/addInventory.do":
+			InventoryController.addInventory(request, response);
+			break;
+		case "/BattleSim/getAllInventory.do":
+			InventoryController.getAllInventory(request, response);
 			break;
 		case "/BattleSim/deleteUser.do":
 			ac.deleteUser(request, response);
@@ -93,15 +92,6 @@ public class RequestHelper {
 		case "/BattleSim/updateStats.do":
 			break;
 		case "/BattleSim/deleteStats.do":
-			break;
-		case "/BattleSim/getBattleClass.do":
-			BattleClassController.getBattleClassById(request, response);
-			break;
-		case "/BattleSim/getAllBattleClasses.do":
-			BattleClassController.getAllBattleClass(request, response);
-			break;
-		case "/BattleSim/addBattleClass.do":
-			BattleClassController.addBattleClass(request, response);
 			break;
 		default: response.sendError(418, "I'm a Teapot");
 			break;
