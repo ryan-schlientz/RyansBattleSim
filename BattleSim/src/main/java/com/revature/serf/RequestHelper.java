@@ -5,6 +5,10 @@ import java.io.IOException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import com.revature.controllers.InventoryController;
+import com.revature.controllers.ItemController;
+import com.revature.controllers.StatsController;
+
 public class RequestHelper {
 
 	public static void requestdirect(HttpServletRequest request, HttpServletResponse response) throws IOException {
@@ -27,8 +31,13 @@ public class RequestHelper {
 		case "/BattleSim/getAllCreatures.do":
 			break;
 		case "/BattleSim/getItem.do":
+			ItemController.getItem(request, response);
 			break;
 		case "/BattleSim/getAllItems.do":
+			ItemController.getAllItems(request, response);
+			break;
+		case "/BattleSim/addItems.do":
+			ItemController.addItem(request, response);
 			break;
 		case "/BattleSim/getInventory.do":
 			break;
@@ -53,8 +62,13 @@ public class RequestHelper {
 		case "/BattleSim/updateInventory.do":
 			break;
 		case "/BattleSim/addStats.do":
+			StatsController.addStats(request, response);
 			break;
 		case "/BattleSim/getStats.do":
+			StatsController.getStats(request, response);
+			break;
+		case "/BattleSim/getAllStats.do":
+			StatsController.getAllStats(request, response);
 			break;
 		case "/BattleSim/updateStats.do":
 			break;
