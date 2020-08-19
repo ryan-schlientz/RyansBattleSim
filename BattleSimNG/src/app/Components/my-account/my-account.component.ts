@@ -13,4 +13,29 @@ export class MyAccountComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  ifCreate = false;
+  ifDelete = false;
+  ifManage = false;
+
+
+
+
+
+
+  showCC(){
+    this.ifCreate = true;
+    this.ifDelete = false;
+    this.ifManage = false;
+  }
+  showDC(){
+    this.ifCreate = false;
+    this.ifDelete = true;
+    this.ifManage = false;
+  }
+  showMI(){
+    this.ifCreate = false;
+    this.ifDelete = false;
+    this.ifManage = true;
+  }
+
 }
