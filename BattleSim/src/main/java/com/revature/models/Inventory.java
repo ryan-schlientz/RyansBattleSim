@@ -39,6 +39,16 @@ public class Inventory {
 		this.cr = cr;
 		this.isEquipped = isEquipped;
 	}
+	
+	
+
+	public Inventory(int id, Item item, Creature cr, int isEquipped) {
+		super();
+		this.id = id;
+		this.item = item;
+		this.cr = cr;
+		this.isEquipped = isEquipped;
+	}
 
 	@Override
 	public int hashCode() {
