@@ -8,7 +8,6 @@ import org.hibernate.Session;
 import org.hibernate.criterion.Restrictions;
 
 import com.revature.models.Creature;
-import com.revature.models.BattleClass;
 
 import com.revature.util.HibernateUtil;
 

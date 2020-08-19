@@ -7,22 +7,18 @@ import org.hibernate.HibernateException;
 import org.hibernate.Session;
 import org.hibernate.criterion.Restrictions;
 
-import com.revature.models.BattleClass;
+import com.revature.models.Character;
+import com.revature.models.Creature;
 import com.revature.util.HibernateUtil;
 
-import com.revature.util.HibernateUtil;
+public class CharacterRepositoryImpl implements CharacterRepository {
 
-
-
-
-public class BattleClassRepositoryImpl implements BattleClassRepository {
-
-	public int addBattleClass(BattleClass battleClass) {
-		int id = 0;
-		 Session sess = HibernateUtil.getSession();
+	public int addCharacter(Character character) {
+		Session sess = HibernateUtil.getSession();
+		 int id = 0;
 	        try {
 	            sess.beginTransaction();
-	            id = Integer.parseInt(sess.save(battleClass).toString());
+	            id = Integer.parseInt(sess.save(character).toString());
 	            sess.getTransaction().commit();
 	        } catch (HibernateException e) {
 	            e.printStackTrace();
@@ -33,58 +29,40 @@ public class BattleClassRepositoryImpl implements BattleClassRepository {
 		return id;
 	}
 
-	public List<BattleClass> getAllBattleClass() {
+	public List<Character> getAllCharacters() {
 		 Session sess = HibernateUtil.getSession();
-		 List<BattleClass> list = null;
+		 List<Character> list = null;
 	        try {
-	        	
-	        	list = sess.createQuery("FROM class").list();
-	           
+	           list = sess.createQuery("FROM character").list();
 	        } catch (HibernateException e) {
 	            e.printStackTrace();
 	        } finally {
 	            sess.close();
 	        }
 		return list;
+	
 	}
-  
-	public BattleClass getBattleClass(int id) {
+
+	public Character getCharacter(int id) {
 		 Session sess = HibernateUtil.getSession();
-		 BattleClass bc = null;
+		 Character ch = null;
 	        try {
-	        	bc = (BattleClass) sess.get(BattleClass.class, id);
+	        	ch = (Character) sess.get(Character.class, id);
 	           
 	        } catch (HibernateException e) {
 	            e.printStackTrace();
 	        } finally {
 	            sess.close();
 	        }
-		return bc;
+		return ch;
 	}
 
-	public BattleClass getBattleClass(String title) {
-		 Session sess = HibernateUtil.getSession();
-		 BattleClass bc = null;
-	        try {
-	        	
-	        	Criteria crit = sess.createCriteria(BattleClass.class);
-	        	crit.add(Restrictions.eq("title", title));
-	        	
-	        	bc = (BattleClass) crit.uniqueResult();
-	           
-	        } catch (HibernateException e) {
-	            e.printStackTrace();
-	        } finally {
-	            sess.close();
-	        }
-		return bc;
-	}
 
-	public void updateBattleClass(BattleClass battleClass) {
+	public void updateCharacter(Character character) {
 		 Session sess = HibernateUtil.getSession();
 	        try {
 	            sess.beginTransaction();
-	            sess.merge(battleClass);
+	            sess.merge(character);
 	            sess.getTransaction().commit();
 	        } catch (HibernateException e) {
 	            e.printStackTrace();
@@ -95,11 +73,11 @@ public class BattleClassRepositoryImpl implements BattleClassRepository {
 
 	}
 
-	public void deleteBattleClass(int id) {
+	public void deleteCharacter(int id) {
 		 Session sess = HibernateUtil.getSession();
 	        try {
 	            sess.beginTransaction();
-	            sess.delete(sess.get(BattleClass.class, id));
+	            sess.delete(sess.get(Character.class, id));
 	            sess.getTransaction().commit();
 	        } catch (HibernateException e) {
 	            e.printStackTrace();
