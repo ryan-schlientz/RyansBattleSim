@@ -5,6 +5,7 @@ import java.io.IOException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import com.revature.controllers.BattleClassController;
 import com.revature.controllers.CreatureController;
 
 public class RequestHelper {
@@ -64,6 +65,15 @@ public class RequestHelper {
 		case "/BattleSim/updateStats.do":
 			break;
 		case "/BattleSim/deleteStats.do":
+			break;
+		case "/BattleSim/getBattleClass.do":
+			BattleClassController.getBattleClassById(request, response);
+			break;
+		case "/BattleSim/getAllBattleClasses.do":
+			BattleClassController.getAllBattleClass(request, response);
+			break;
+		case "/BattleSim/addBattleClass.do":
+			BattleClassController.addBattleClass(request, response);
 			break;
 		default: response.sendError(418, "I'm a Teapot");
 			break;
