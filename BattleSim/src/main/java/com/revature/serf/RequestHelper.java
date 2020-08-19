@@ -56,6 +56,7 @@ public class RequestHelper {
 			ItemController.addItem(request, response);
 			break;
 		case "/BattleSim/getInventory.do":
+			InventoryController.getInventory(request, response);
 			break;
 		case "/BattleSim/deleteUser.do":
 			ac.deleteUser(request, response);
@@ -64,10 +65,13 @@ public class RequestHelper {
 			ac.deleteCharacter(request, response);
 			break;
 		case "/BattleSim/deleteCreature.do":
+			CreatureController.deleteCreature(request, response);
 			break;
 		case "/BattleSim/deleteItem.do":
+			ItemController.deleteItem(request, response);
 			break;
 		case "/BattleSim/deleteInventory.do":
+			InventoryController.deleteInventory(request, response);
 			break;
 		case "/BattleSim/updateUser.do":
 			ac.updateUser(request, response);
@@ -76,10 +80,13 @@ public class RequestHelper {
 			ac.updateCharacter(request, response);
 			break;
 		case "/BattleSim/updateCreature.do":
+			CreatureController.updateCreature(request, response);
 			break;
 		case "/BattleSim/updateItem.do":
+			ItemController.updateItem(request, response);
 			break;
 		case "/BattleSim/updateInventory.do":
+			InventoryController.updateInventory(request, response);
 			break;
 		case "/BattleSim/addStats.do":
 			StatsController.addStats(request, response);
@@ -91,8 +98,10 @@ public class RequestHelper {
 			StatsController.getAllStats(request, response);
 			break;
 		case "/BattleSim/updateStats.do":
+			StatsController.updateStats(request, response);
 			break;
 		case "/BattleSim/deleteStats.do":
+			StatsController.deleteStats(request, response);
 			break;
 		case "/BattleSim/getBattleClass.do":
 			BattleClassController.getBattleClassById(request, response);

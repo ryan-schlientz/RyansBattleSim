@@ -17,39 +17,55 @@ public class InventoryController {
 
 	public static InventoryService is = new InventoryServiceImpl();
 	public static Gson gson = new Gson();
-	
+
 	public static void getInventory(HttpServletRequest request, HttpServletResponse response) throws IOException {
-		
+
 		int id = Integer.parseInt(request.getParameter("id"));
 		Inventory s = new Inventory();
 		s = is.getInventory(id);
 		if (s != null) {
 			response.getWriter().append(gson.toJson(s));
-		}
-		else {
+		} else {
 			response.getWriter().append("{}");
 		}
-		
+
 	}
-	
-	public static void addInventory(HttpServletRequest request, HttpServletResponse response) throws JsonSyntaxException, JsonIOException, IOException {
-		
+
+	public static void addInventory(HttpServletRequest request, HttpServletResponse response)
+			throws JsonSyntaxException, JsonIOException, IOException {
+
 		Inventory s = gson.fromJson(request.getReader(), Inventory.class);
 		int id = is.addInventory(s);
 		if (id > 0) {
 			response.getWriter().append(gson.toJson(s));
-		}
-		else {
+		} else {
 			response.getWriter().append("{}");
 		}
-		
+
 	}
-	
+
 	public static void getAllInventory(HttpServletRequest request, HttpServletResponse response) throws IOException {
-		
+
 		List<Inventory> InventoryList = is.getAllInventories();
 		response.getWriter().append(gson.toJson(InventoryList));
-		
+
 	}
-	
+
+	public static void updateInventory(HttpServletRequest request, HttpServletResponse response)
+			throws JsonSyntaxException, JsonIOException, IOException {
+
+		Inventory s = gson.fromJson(request.getReader(), Inventory.class);
+		is.updateInventory(s);
+		
+
+	}
+
+	public static void deleteInventory(HttpServletRequest request, HttpServletResponse response)
+			throws JsonSyntaxException, JsonIOException, IOException {
+
+		Inventory s = gson.fromJson(request.getReader(), Inventory.class);
+		is.deleteInventory(s.getID());
+
+	}
+
 }

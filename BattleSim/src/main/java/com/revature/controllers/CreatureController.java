@@ -64,5 +64,45 @@ public class CreatureController {
 		
 		
 	}
+	
+	public static void deleteCreature(HttpServletRequest request, HttpServletResponse response) {
+		try {
+			Creature creature = gson.fromJson(request.getReader(), Creature.class);
+			
+			if(creature != null) {
+			creatureaService.deleteCreature(creature.getCrId());
+			
+			}
+			else response.getWriter().append("{}");
+			
+			
+		} catch (JsonSyntaxException | JsonIOException | IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		
+	}
+	
+	public static void updateCreature(HttpServletRequest request, HttpServletResponse response) {
+		try {
+			Creature creature = gson.fromJson(request.getReader(), Creature.class);
+			
+			if(creature != null) {
+			creatureaService.updateCreature(creature);
+			
+			response.getWriter().append(gson.toJson(creature));
+			
+			}
+			else response.getWriter().append("{}");
+			
+			
+		} catch (JsonSyntaxException | JsonIOException | IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		
+	}
 
 }
