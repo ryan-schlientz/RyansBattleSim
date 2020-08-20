@@ -1,23 +1,19 @@
+<div class="container text-center" style="padding:180px">
+  <h3>Login To RYAN's BATTLE SIMULATOR!</h3>
+  <br>
 
-  <table style="width:600px; margin-left:auto; margin-right:auto;  margin-top:20%;" class="table-sm table border">
-    <thead class="thead-light" style="text-align:center">
-      <tr>      
-          <th colspan="6" >Login To RYAN's BATTLE SIMULATOR!</th>
-      </tr>
-    </thead>
-      <tr>
-          <td>User Name:</td>
-          <td><input type="text" id="Username"></td>
-          <td></td>
-          <td>Password:</td>
-          <td><input type="text" id="Password"></td>
-          <td></td>
-      </tr>
-      <tr>
-          <td colspan="6" style="text-align:center" >
-            <button type="button" id="Submit" (click)="loginUser()" >Submit</button></td>
-      </tr>
-    </table>
+  <form>
+
+      <label for="Username">User Name:</label>
+      <input class="form-control" type="text" id="Username">
+
+      <label for="Password">Password:</label>
+      <input class="form-control" type="password" id="Password">
+      <br>
+      <button class="btn btn-primary float-center" id="Submit" (click)="loginUser()" >Submit</button>
+  </form>
+
+</div>
 
     <app-my-account *ngIf="ifLogin"></app-my-account>
 
