@@ -112,8 +112,11 @@ public class AccountController {
 	}
 
 	public void addCharacter(HttpServletRequest request, HttpServletResponse response) throws IOException {
-		Character c = gson.fromJson(request.getReader(), Character.class);
-		cs.addCharacter(c);
+		HttpSession sess = request.getSession();
+		Users user = gson.fromJson(sess.getAttribute("user").toString(), Users.class);
+		String battleClass = request.getParameter("battleClass").toString();
+		String charName = request.getParameter("name");
+		cs.addCharacter(user, battleClass, charName);
 		response.setStatus(200);
 	}
 
