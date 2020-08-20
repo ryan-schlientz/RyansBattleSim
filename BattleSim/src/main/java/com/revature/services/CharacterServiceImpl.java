@@ -50,11 +50,12 @@ public class CharacterServiceImpl implements CharacterService {
 		
 		charCreature.setBattleClass(bc);
 		charCreature.setName(creatureName);
+		
+		charStats.setId(sr.addStats(charStats));
 		charCreature.setStats(charStats);
 		charCreature.setXpBase(10);
 		
-		sr.addStats(charStats);
-		creatureRepo.addCreature(charCreature);
+		charCreature.setCrId(creatureRepo.addCreature(charCreature));
 		character.setCreature(charCreature);
 		character.setUser(user);
 
