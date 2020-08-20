@@ -15,8 +15,8 @@ export class UserService {
 register(user:User) :Observable<User>{
   return this.http.post<User>('http://localhost:8080/BattleSim/addUser.do', user, {headers: this.headers});
 }
-login(user:User) :Observable<User>{
-  return this.http.post<User>('http://localhost:8080/BattleSim/login.do', user, {headers: this.headers});
+loginUser(user:User) :Observable<any>{
+  return this.http.post<any>('http://localhost:8080/BattleSim/login.do', user, {headers: this.headers});
 
 }
 }
