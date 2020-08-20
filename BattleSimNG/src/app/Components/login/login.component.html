@@ -1,1 +1,42 @@
-<p>login works!</p>
+
+  <table style="width:600px; margin-left:auto; margin-right:auto;  margin-top:20%;" class="table-sm table border">
+    <thead class="thead-light" style="text-align:center">
+      <tr>      
+          <th colspan="6" >Login To RYAN's BATTLE SIMULATOR!</th>
+      </tr>
+    </thead>
+      <tr>
+          <td>User Name:</td>
+          <td><input type="text" id="Username"></td>
+          <td></td>
+          <td>Password:</td>
+          <td><input type="text" id="Password"></td>
+          <td></td>
+      </tr>
+      <tr>
+          <td colspan="6" style="text-align:center" ><button type="button" id="Submit" onclick="loginUser()" >Submit</button></td>
+      </tr>
+    </table>
+    <!-- script src="js/scripts.js"></script -->
+  <script>
+      function loginUser() {
+          let user = document.getElementById("Username").value;
+          let pass = document.getElementById("Password").value;
+          //Make AJAX call:
+          let xhttp = new XMLHttpRequest();
+          xhttp.onreadystatechange = function() {
+              if(this.readyState == 4 && this.status == 200) {
+                  console.log(this.responseText);
+              }
+          }
+          xhttp.open("POST","http://localhost:8080/BattleSim/login.do",true);
+          xhttp.setRequestHeader('Content-Type','application/json');
+          let login = {
+              username: user,
+              password: pass
+          };
+          
+          xhttp.send(JSON.stringify(login));
+      }
+  </script>
+  
