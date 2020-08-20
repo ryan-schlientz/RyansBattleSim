@@ -25,6 +25,9 @@ public class RequestHelper {
 		case "/BattleSim/getUser.do":
 			ac.getUser(request, response);
 			break;
+		case "/BattleSim/getAllUsers.do":
+			ac.getAllUsers(request, response);
+			break;
 		case "/BattleSim/addUser.do":
 			ac.addUser(request, response);
 			break;
