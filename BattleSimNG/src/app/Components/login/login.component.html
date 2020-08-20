@@ -14,29 +14,11 @@
           <td></td>
       </tr>
       <tr>
-          <td colspan="6" style="text-align:center" ><button type="button" id="Submit" onclick="loginUser()" >Submit</button></td>
+          <td colspan="6" style="text-align:center" >
+            <button type="button" id="Submit" (click)="loginUser()" >Submit</button></td>
       </tr>
     </table>
-    <!-- script src="js/scripts.js"></script -->
-  <script>
-      function loginUser() {
-          let user = document.getElementById("Username").value;
-          let pass = document.getElementById("Password").value;
-          //Make AJAX call:
-          let xhttp = new XMLHttpRequest();
-          xhttp.onreadystatechange = function() {
-              if(this.readyState == 4 && this.status == 200) {
-                  console.log(this.responseText);
-              }
-          }
-          xhttp.open("POST","http://localhost:8080/BattleSim/login.do",true);
-          xhttp.setRequestHeader('Content-Type','application/json');
-          let login = {
-              username: user,
-              password: pass
-          };
-          
-          xhttp.send(JSON.stringify(login));
-      }
-  </script>
-  
+
+    <app-my-account *ngIf="ifLogin"></app-my-account>
+
+ 
