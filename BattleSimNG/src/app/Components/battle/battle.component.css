@@ -1,19 +1,19 @@
-tr,td{
+/* tr,td{
        border: 1px solid black ; 
 
-}
+} */
 #invstats{
     float:left;
 }
 
 #monsterHp{
     clear: both;
-    float:right;
 }
 
 img{
     display: inline-block;
-    width: 200px;
+    width: 700px;
+    border:10px black dashed;
 }
 .flex-container{
     display: flex;
@@ -23,6 +23,6 @@ img{
     flex-grow:1;
 }
 .flex-item1{
-    width:200px;
-    flex-grow:3;
+    width:500px;
+    flex-grow:7;
 }
