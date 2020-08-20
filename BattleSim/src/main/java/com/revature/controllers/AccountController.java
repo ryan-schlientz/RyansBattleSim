@@ -64,6 +64,19 @@ public class AccountController {
 			
 				
 	}
+	
+	public void getAllUsers(HttpServletRequest request, HttpServletResponse response) throws IOException {
+		List<Users> users = us.getAllUsers();
+
+		try {
+			if (users == null) {
+				response.getWriter().append("{}");
+			} else
+				response.getWriter().append(gson.toJson(users));
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+	}
 
 	public void updateUser(HttpServletRequest request, HttpServletResponse response) throws IOException {
 		Users u = gson.fromJson(request.getReader(), Users.class);
