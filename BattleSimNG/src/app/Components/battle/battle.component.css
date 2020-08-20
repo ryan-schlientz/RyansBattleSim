@@ -1,0 +1,28 @@
+/* tr,td{
+       border: 1px solid black ; 
+
+} */
+#invstats{
+    float:left;
+}
+
+#monsterHp{
+    clear: both;
+}
+
+img{
+    display: inline-block;
+    width: 700px;
+    border:10px black dashed;
+}
+.flex-container{
+    display: flex;
+}
+.flex-item{
+    width:200px;
+    flex-grow:1;
+}
+.flex-item1{
+    width:500px;
+    flex-grow:7;
+}

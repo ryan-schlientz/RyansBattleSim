@@ -1,1 +1,76 @@
-<p>battle works!</p>
+<div id="visuals" div="container" class="flex-container">
+
+    <div id="invstats" class="flex-item">
+
+        <!-- Inventory-->
+        <table class="table">
+            <thead>
+                <th>Inventory</th>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>
+                        Magic Wand
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+
+        <!-- Stats-->
+        <table class="table">
+            <thead>
+                <th>Stats</th>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>MaxHP</td>
+                    <td>{{MaxHp}}</td>
+                </tr>
+                <tr>
+                    <td>Attack</td>
+                    <td>{{attack}}</td>
+                </tr>
+                <tr>
+                    <td>Defense</td>
+                    <td>{{defense}}</td>
+                </tr>
+
+            </tbody>
+        </table>
+
+    </div>
+    <!-- Monster Sprite-->
+
+    <div class="flex-item1">
+        <div id="monsterImg">
+            <img src="/assets/scarymonsters/scarymonster.png" />
+        </div>
+        <!-- <div id="monsterHp" style="text-align: center;">
+            <p>HP:{{MonsterHp}}</p>
+        </div> -->
+
+        <div style="text-align: center;">
+            <label for="file">MonsterHP:</label>
+            <progress id="file" [value]="MonsterHp" [max]="MonsterHp"> 32 </progress><br>
+            <label for="file">PlayerHP:</label>
+            <progress id="file" [value]="MaxHp" [max]="MaxHp"> 32 </progress><br>
+            <button type="button" class="btn btn-primary" (click) ="attackMonster()" >Attack</button>
+            <button type="button" class="btn btn-primary" (click) ="attackMonster()">Defend</button>
+        </div>
+    </div>
+
+    <div class="flex-item">
+        <h1>Fight Log</h1>
+        <ul>
+            <li>waaa attacked</li>
+            <li>TheMegreganator attacked</li>
+            <li>waaa attacked</li>
+            <li>TheMegreganator attacked</li>
+            <li>waaa attacked</li>
+            <li>TheMegreganator attacked</li>
+        </ul>
+
+
+    </div>
+
+</div>

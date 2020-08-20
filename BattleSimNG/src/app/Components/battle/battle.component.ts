@@ -11,5 +11,14 @@ export class BattleComponent implements OnInit {
 
   ngOnInit(): void {
   }
+   attack:number = 1;
+   defense:number = 2;
+   MaxHp:number=-1;
+   MonsterHp:number=9000;
+attackMonster(){
+  console.log("waaaa");
+}
+
+
 
 }
