@@ -15,6 +15,10 @@ export class BattleComponent implements OnInit {
    defense:number = 2;
    MaxHp:number=-1;
    MonsterHp:number=9000;
+attackMonster(){
+  console.log("waaaa");
+}
+
 
 
 }
