@@ -3,13 +3,13 @@ export class User {
     id : number;
     username :string;
     password :string;
-    Role : any;
+    Roles : any;
   
 
     constructor(username :string, password :string) {
         this.id = 1;
         this.username = username;
         this.password = password;
-        this.Role=null;
+        this.Roles= null;
     }
 }
