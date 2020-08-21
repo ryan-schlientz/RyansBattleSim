@@ -46,6 +46,9 @@ public class RequestHelper {
 		case "/BattleSim/getCreature.do": 
 			CreatureController.getCreatureById(request, response);
 			break;
+		case "/BattleSim/getRandomCreature.do": 
+			CreatureController.getRandomCreature(request, response);
+			break;
 		case "/BattleSim/addCreature.do":
 			CreatureController.addCreature(request, response);
 			break;

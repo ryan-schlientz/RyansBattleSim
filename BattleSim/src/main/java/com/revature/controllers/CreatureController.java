@@ -44,6 +44,21 @@ public class CreatureController {
 		}
 
 	}
+
+	public static void getRandomCreature(HttpServletRequest request, HttpServletResponse response) {
+		
+		Creature creature = creatureaService.getRandomCreature();
+		try {
+			if (creature == null) {
+				response.getWriter().append("{}");
+			} else
+				response.getWriter().append(gson.toJson(creature));
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+		
+	}
+	
 	public static void addCreature(HttpServletRequest request, HttpServletResponse response) {
 		try {
 			Creature creature = gson.fromJson(request.getReader(), Creature.class);

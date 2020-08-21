@@ -22,6 +22,12 @@ private CreatureRepository cr = new CreatureRepositoryImpl();
 	public Creature getCreature(int id) {
 		return cr.getCreature(id);
 	}
+	
+	public Creature getRandomCreature() {
+		List<Creature> creatures = cr.getAllCreatures();
+		int index = (int) (Math.random() * creatures.size());
+		return creatures.get(index);
+	}
 
 	public Creature getCreature(String Creaturename) {
 		return cr.getCreature(Creaturename);
