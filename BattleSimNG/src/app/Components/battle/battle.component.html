@@ -45,35 +45,32 @@
         <div id="monsterImg">
             <img src="/assets/scarymonsters/scarymonster.png" />
         </div>
-        <div id="monsterHp" style="text-align: center;">
+        <!-- <div id="monsterHp" style="text-align: center;">
             <p>HP:{{MonsterHp}}</p>
-        </div>
+        </div> -->
 
         <div style="text-align: center;">
-            <div><label for="file">MonsterHP:</label>
-            <progress id="file" [value]="CurrMonsterHp" [max]="MaxMonsterHp"> </progress>
-            {{CurrMonsterHp}}/{{MaxMonsterHp}} </div> 
-        <div><label for="file">PlayerHP:</label>
-            <progress id="file" [value]="CurrHp" [max]="MaxHp"> 32 </progress>
-            {{CurrHp}}/{{MaxHp}} </div>
-            <button type="button" class="btn btn-primary" (click)="attackMonster()">Attack</button>
-            <button type="button" class="btn btn-primary" (click)="defend()">Defend</button>
+            <label for="file">MonsterHP:</label>
+            <progress id="file" [value]="MonsterHp" [max]="MonsterHp"> 32 </progress><br>
+            <label for="file">PlayerHP:</label>
+            <progress id="file" [value]="MaxHp" [max]="MaxHp"> 32 </progress><br>
+            <button type="button" class="btn btn-primary" (click) ="attackMonster()" >Attack</button>
+            <button type="button" class="btn btn-primary" (click) ="attackMonster()">Defend</button>
         </div>
     </div>
 
     <div class="flex-item">
         <h1>Fight Log</h1>
-        <div>
-            <div id = "fightlog" style="width: 200px; height: 400px; overflow: scroll">
-                <ul *ngFor="let s of fightLog">
-                    <li>{{s}}</li>
-                    <!-- <li>waaa attacked</li>
+        <ul>
+            <li>waaa attacked</li>
+            <li>TheMegreganator attacked</li>
+            <li>waaa attacked</li>
+            <li>TheMegreganator attacked</li>
+            <li>waaa attacked</li>
+            <li>TheMegreganator attacked</li>
+        </ul>
 
-            <li>TheMegreganator attacked</li> -->
-                </ul>
-            </div>
-
-
-        </div>
 
     </div>
+
+</div>
