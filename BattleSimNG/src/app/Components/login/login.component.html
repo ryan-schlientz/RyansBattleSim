@@ -1,16 +1,17 @@
-<div class="container text-center" style="padding:180px">
+<div class="container text-center loginclass" style="margin: auto; margin-top: 180px; width: fit-content; background-image: url('/assets/RSrealbg.png');  background-repeat: no-repeat; background-size: 100%; padding: 30px 50px;  box-sizing: content-box;">
   <h3>Login To RYAN's BATTLE SIMULATOR!</h3>
   <br>
 
   <form>
 
       <label for="Username">User Name:</label>
-      <input class="form-control" type="text" id="Username">
+      <input class="form-control inputfields" type="text" id="Username" style= "width: 50%; margin:auto; text-align: center; ">
 
       <label for="Password">Password:</label>
-      <input class="form-control" type="password" id="Password">
+      <input class="form-control inputfields" type="password" id="Password" style= "width: 50%; margin:auto; text-align: center" >
       <br>
-      <button class="btn btn-primary float-center" id="Submit" (click)="loginUser()" >Submit</button>
+      <button class="btn btn-dark float-center" id="Submit" (click)="loginUser() " style= "margin:2px; background-image: url('/assets/runescapebutton.jpg'); background-repeat: no-repeat; background-size:cover; width: 150px; height: 43px;" >Submit</button>
+      <button class = "btn btn-dark float-center" id = "regbutton" (click) = "registeruser()" style= "margin:2px; background-image: url('/assets/runescapebutton.jpg'); background-repeat: no-repeat; background-size:cover; width: 150px; height: 43px;"> Register </button>
   </form>
 
 </div>

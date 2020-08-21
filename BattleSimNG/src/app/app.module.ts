@@ -14,7 +14,7 @@ import { BattleComponent } from './Components/battle/battle.component';
 import { CreateCharacterComponent } from './Components/create-character/create-character.component';
 import { DeleteCharacterComponent } from './Components/delete-character/delete-character.component';
 import { ManageInventoryComponent } from './Components/manage-inventory/manage-inventory.component';
-import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+// import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
   declarations: [
@@ -32,8 +32,8 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule,
-    NgbModule
+    HttpClientModule
+    // NgbModule
   ],
   providers: [],
   bootstrap: [AppComponent]
