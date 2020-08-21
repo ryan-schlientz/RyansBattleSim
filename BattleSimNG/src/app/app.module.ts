@@ -15,7 +15,7 @@ import { CreateCharacterComponent } from './Components/create-character/create-c
 import { DeleteCharacterComponent } from './Components/delete-character/delete-character.component';
 import { ManageInventoryComponent } from './Components/manage-inventory/manage-inventory.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
-
+import { FormsModule } from '@angular/forms';
 @NgModule({
   declarations: [
     AppComponent,
@@ -33,7 +33,8 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    NgbModule
+    NgbModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
