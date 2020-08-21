@@ -7,10 +7,10 @@ export class Creature {
     stats : Stats;
     battleClass :string;
 
-    constructor(name :string, battleClass :string) {
-        this.crId = 2;
+    constructor(crId :number, name :string, stats :Stats, battleClass :string) {
+        this.crId = crId;
         this.name = name;
-        this.stats = null;
+        this.stats = stats;
         this.battleClass = battleClass;
     }
 }
