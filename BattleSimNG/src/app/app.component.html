@@ -1,7 +1,7 @@
-<nav class="navbar navbar-dark navbar-expand-sm" style="background-color: rgb(46, 212, 204);">
+<!-- <nav class="navbar navbar-dark navbar-expand-sm" style="background-color: rgb(46, 212, 204);">
   <div class="container">
       <div class="navbar-nav">
-          <!-- <h3 class="nav-item nav-link"><a routerLink="about">About</a></h3> -->
+          <!-- <h3 class="nav-item nav-link"><a routerLink="about">About</a></h3> 
           <h3 class="nav-item nav-link"><a routerLink="home">Home</a></h3>
           <h3 class="nav-item nav-link"><a routerLink="register">Register</a></h3>
           <h3 class="nav-item nav-link"><a routerLink="login">Login</a></h3>
@@ -10,8 +10,69 @@
           <h3 class="nav-item nav-link"><a routerLink="myAccount">My Account</a></h3>
       </div>
     </div>
-  </nav>
+  </nav> -->
+<!-- Begin CAPSULE -->
+<div class = "container capsule" style = "padding: 0px; border-radius: 7px; background-image: src('/assets/runescapebackgroundlogin.jpg');">
+
+
+<!-- Revamped NAVBAR -->
+<div class = "container navcontainer" style = "padding: 0px; ">
+<nav class="navbar navbar-expand-lg navbar-dark navbar-light navedit">
+  <a class="navbar-brand" routerLink="login" >Battle Sim Home</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+    
+      <li class="nav-item">
+        <a class="nav-link" routerLink="battle" >Battle</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLink="help" >Help</a>
+      </li>
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" routerLink="myAccount">
+          My Account
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item" routerLink="createCharacter">Create Character</a>
+          <a class="dropdown-item" routerLink="deleteCharacter">Delete Character</a>
+          <div class="dropdown-divider"></div>
+          <a class="dropdown-item" routerLink="manageInventory">Manage Inventory</a>
+        </div>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+      </li>
+    </ul>
+    <!-- <form class="form-inline my-2 my-lg-0">
+      <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+    </form> -->
+  </div>
+</nav><!-- NAVBAR END -->
+
+</div> <!--navbar container -->
+<br>
+
+<!-- DIV TO DISPLAY EACH COMPONENT-->
+<div class = "container compdiv">
+
+
+  
   <router-outlet></router-outlet>
+
+
+
+
+</div> <!-- END COMPONENT DIV-->
+
+
+
+</div> <!-- capsule division (end of page)-->
+  
 
   
   

@@ -16,6 +16,7 @@ import { DeleteCharacterComponent } from './Components/delete-character/delete-c
 import { ManageInventoryComponent } from './Components/manage-inventory/manage-inventory.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { FormsModule } from '@angular/forms';
+
 @NgModule({
   declarations: [
     AppComponent,

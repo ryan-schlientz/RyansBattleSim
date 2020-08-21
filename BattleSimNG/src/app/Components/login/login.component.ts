@@ -35,7 +35,15 @@ loginUser(){
   }
  )
 
+ 
+
 
 }
+
+
+registeruser(){
+  this.router.navigate(['register']);
+
+ }
 
 }
