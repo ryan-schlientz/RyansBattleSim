@@ -19,18 +19,11 @@ public class AccountController {
 	Gson gson = new Gson();
 	UsersService us = new UsersServiceImpl();
 	CharacterService cs = new CharacterServiceImpl();
-	/*
-	 * case "/BattleSim/getUser.do": break; case "/BattleSim/addUser.do": break;
-	 * case "/BattleSim/login.do": break; case "/BattleSim/getCharacter.do": break;
-	 * 
-	 * 
-	 * case "/BattleSim/deleteUser.do": break; case "/BattleSim/deleteCharacter.do":
-	 * break;
-	 * 
-	 * case "/BattleSim/updateUser.do": break; case "/BattleSim/updateCharacter.do":
-	 * break;
-	 * 
-	 */
+	
+	// Due to our struggle using HTTPSession and cookies (our desired method of storing a user)
+	// We're using a static user.
+	static Users staticuser = null;
+	
 
 	public void addUser(HttpServletRequest request, HttpServletResponse response) throws IOException {
 		Users adduser = gson.fromJson(request.getReader(), Users.class);
@@ -97,8 +90,12 @@ public class AccountController {
 		Users loginuser = gson.fromJson(request.getReader(), Users.class);
 		loginuser = us.login(loginuser.getUsername(), loginuser.getPassword());
 		if (loginuser != null) {
+			staticuser = loginuser;
+			
+			// Ideal, but doesn't work w/ Angular
 			HttpSession sess = request.getSession();
 			sess.setAttribute("user", gson.toJson(loginuser));
+			
 			response.setStatus(200);
 		} else {
 			response.setStatus(401);
@@ -108,12 +105,14 @@ public class AccountController {
 	public void logout(HttpServletRequest request, HttpServletResponse response) throws IOException {
 		HttpSession sess = request.getSession();
 		sess.setAttribute("user", null);
+		staticuser = null;
 		response.setStatus(200);
 	}
 
 	public void addCharacter(HttpServletRequest request, HttpServletResponse response) throws IOException {
 		HttpSession sess = request.getSession();
-		Users user = gson.fromJson(sess.getAttribute("user").toString(), Users.class);
+//		Users user = gson.fromJson(sess.getAttribute("user").toString(), Users.class);
+		Users user = staticuser;
 		String battleClass = request.getParameter("battleClass").toString();
 		String charName = request.getParameter("name");
 		cs.addCharacter(user, battleClass, charName);
