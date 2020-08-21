@@ -13,7 +13,7 @@ export class CreatureService {
   private headers = new HttpHeaders({'Content-Type':'application/json'});
 
   getCreature() : Observable<Creature> {
-    return this.http.get<Creature>('http://localhost:8080/BattleSim/getCreature.do?id=1');
+    return this.http.get<Creature>('http://localhost:8080/BattleSim/getRandomCreature.do');
   }
   
 }

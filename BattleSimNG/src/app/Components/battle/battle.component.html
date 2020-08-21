@@ -45,12 +45,9 @@
         <div id="monsterImg">
             <img src="/assets/scarymonsters/scarymonster.png" />
         </div>
-        <div id="monsterHp" style="text-align: center;">
-            <p>HP:{{MonsterHp}}</p>
-        </div>
 
         <div style="text-align: center;">
-            <div><label for="file">MonsterHP:</label>
+            <div><label for="file">{{creature.name}} HP:</label>
             <progress id="file" [value]="CurrMonsterHp" [max]="MaxMonsterHp"> </progress>
             {{CurrMonsterHp}}/{{MaxMonsterHp}} </div> 
         <div><label for="file">PlayerHP:</label>
