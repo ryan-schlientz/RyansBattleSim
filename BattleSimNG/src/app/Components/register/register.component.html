@@ -1,1 +1,21 @@
-<button (click) ="register()" >register works!</button>
+
+<div class="container text-center" style="padding:180px">
+    <h3>Register A New Account</h3>
+    <br>
+  
+    <form>
+  
+        <label for="Username">User Name:</label>
+        <input class="form-control" type="text" id="Username" [(ngModel)]="uname">
+  
+        <label for="Password">Password:</label>
+        <input class="form-control" type="password" id="Password" [(ngModel)]="pword">
+        
+        <br>
+        <button class="btn btn-primary float-center" id="Submit" (click)="register()"  >Submit</button>
+    </form>
+  
+  </div>
+
+
+

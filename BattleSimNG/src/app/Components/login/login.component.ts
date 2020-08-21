@@ -22,6 +22,7 @@ loginUser(){
 
   (response) =>{
     console.log(response);
+    console.log("success");
     if (response ==null){
       this.ifLogin=true;
       this.router.navigate(['myAccount']);

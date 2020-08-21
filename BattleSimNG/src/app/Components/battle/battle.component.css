@@ -9,10 +9,12 @@
 #monsterHp{
     clear: both;
 }
-
+ul{
+    font-size: 10px;
+}
 img{
     display: inline-block;
-    width: 700px;
+    width: 100%;
     border:10px black dashed;
 }
 .flex-container{

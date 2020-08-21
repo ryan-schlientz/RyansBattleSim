@@ -14,8 +14,11 @@ export class RegisterComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  uname : string;
+  pword : string;
+
 register(){
- this.userServ.register(new User("Greg", "1234")).subscribe(
+ this.userServ.register(new User(this.uname, this.pword)).subscribe(
 
   (response) =>{
     console.log(response);
