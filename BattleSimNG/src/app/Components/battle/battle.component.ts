@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { CreatureService } from 'src/app/services/creature.service'
+import { Creature } from 'src/app/models/Creature';
 
 @Component({
   selector: 'app-battle',
@@ -7,20 +9,35 @@ import { Component, OnInit } from '@angular/core';
 })
 export class BattleComponent implements OnInit {
 
-  constructor() { }
+  constructor(private cs : CreatureService, ) { 
 
-  ngOnInit(): void {
   }
-  attack: number = 13;
-  defense: number = 2;
+  
+  ngOnInit(): void {
+    this.cs.getCreature().subscribe(
+      (response) => {
+        this.creature = response;
+        this.MaxMonsterHp = this.creature.stats.maxHP;
+        this.MonsterName = this.creature.name;
+        this.CurrMonsterHp = this.MaxMonsterHp;
+        this.MonsterAttack = this.creature.stats.attack;
+        this.MonsterDefense = this.creature.stats.defense;
+      }
+    );
+  }
+
+  creature : Creature;
+
+  attack: number = 25;
+  defense: number = 20;
   MaxHp: number = 100;
   CurrHp: number = 100;
 
-  MaxMonsterHp: number = 100;
-  MonsterName: string= "TheMegreganator";
-  CurrMonsterHp: number = 100;
-  MonsterAttack: number = 7;
-  Monsterdefense: number = 0;
+  MaxMonsterHp: number;
+  MonsterName: string;
+  CurrMonsterHp: number;
+  MonsterAttack: number;
+  MonsterDefense: number;
 
 
   fightLog = [];
@@ -29,8 +46,7 @@ export class BattleComponent implements OnInit {
 
   attackMonster() {
     if (this.match) {
-      console.log("waaaa");
-      let dmg = this.random(this.attack) - this.Monsterdefense;
+      let dmg = this.random(this.attack) - this.MonsterDefense;
       if(dmg<1)
         dmg = 1;
       this.CurrMonsterHp -= dmg;
@@ -45,7 +61,6 @@ export class BattleComponent implements OnInit {
   defend() {
     if (this.match) {
       this.addTofightLog("You wimp");
-      console.log("defendwaaaa");
       this.monsterResponse();
     }
 
@@ -71,20 +86,17 @@ export class BattleComponent implements OnInit {
   }
   refCheck() {
     if (this.CurrMonsterHp <= 0 && this.CurrHp <= 0 ) {
-      console.log("Both of you are dead");
       this.addTofightLog("How did you did do that?");
       this.CurrMonsterHp = 0;
       this.CurrHp = 0;
       this.match = false;
     }
     else if (this.CurrMonsterHp <= 0 ) {
-      console.log("Victory");
       this.addTofightLog("Victory");
       this.CurrMonsterHp = 0;
       this.match = false;
     }
     else if (this.CurrHp <= 0) {
-      console.log("You're bad.uninstall");
       this.addTofightLog("You're bad. Uninstall");
       this.CurrHp = 0;
       this.match = false;
