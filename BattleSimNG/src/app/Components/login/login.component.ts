@@ -17,8 +17,8 @@ export class LoginComponent implements OnInit {
 
   ifLogin: boolean = false;
 
-loginUser(){
- this.userServ.loginUser(new User("username", "password")).subscribe(
+login(){
+ this.userServ.login(new User("username", "password")).subscribe(
 
   (response) =>{
     console.log(response);
