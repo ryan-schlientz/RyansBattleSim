@@ -1,6 +1,6 @@
 package com.revature.models;
 
-import javax.management.relation.Role;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -23,20 +23,20 @@ public class Users {
 	
 	@ManyToOne(targetEntity = Roles.class)
 	@JoinColumn(name="r_id")
-	private Role role;
+	private Roles role;
 	
 	public Users() {
 		super();
 	}
 
-	public Users(String username, String password, Role role) {
+	public Users(String username, String password, Roles role) {
 		super();
 		this.username = username;
 		this.password = password;
 		this.role = role;
 	}
 	
-	public Users(int id, String username, String password, Role role) {
+	public Users(int id, String username, String password, Roles role) {
 		super();
 		this.id = id;
 		this.username = username;
@@ -68,11 +68,11 @@ public class Users {
 		this.password = password;
 	}
 
-	public Role getR_id() {
+	public Roles getR_id() {
 		return role;
 	}
 
-	public void setR_id(Role role) {
+	public void setR_id(Roles role) {
 		this.role = role;
 		}
 
